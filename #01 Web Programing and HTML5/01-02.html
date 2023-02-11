@@ -1,0 +1,20 @@
+<!--
+    02. 다음 HTML5 페이지는 HTML 태그에 2개, CSS에 1개의 간단한 오류가 있다. 찾아서 수정하기.
+-->
+
+<!DOCTYPE html>
+<html>
+<head> <!-- <body> , head가 나오기 전, body는 나올 수 없다. html 태그 오류-->
+<meta charset="utf-8">
+<title>오류를 찾으세요</title>
+<style>
+    h3 { text-align : center; color : darkred;} /* h3 { text-align : center color : darkred;} , 키워드 구분은 ;로 한다. 생략불가. css 오류*/
+    span { color : blue; font-size : 20px;} 
+</style> <!-- </style> 누락, html 태그 오류-->
+</head>
+<body>
+<h3>Elvis Presley</h3> <!-- <h3>Elvis Presley</h> </>태그와 <>태그의 내용은 같다. html 태그 오류-->
+He was an American singer and actor. In November 1956.
+he is often referred to as "<span>the King of Rock and Roll</span>".
+</body>
+</html>

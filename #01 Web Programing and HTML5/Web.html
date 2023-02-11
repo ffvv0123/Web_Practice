@@ -1,0 +1,136 @@
+<!--
+    Title: Web.html
+    Author: Suhyeon Jo
+    Date: 2022-12-12
+    Learn about basic of web programing
+-->
+
+<!--
+    1. 웹 개요
+      1.1 웹의 기본 목적과 구성
+        -> 한 컴퓨터에 만든 문서(document)를 다른 컴퓨터에서 쉽게 볼 수 있도록 하는 것
+
+        웹은 컴퓨터의 기능을 서버(server)와 클라이언트(client)로 나누어서 사용한다.
+        
+        Server: 문서, 이미지, 동영상 등의 데이터를 저장
+        Client: 웹 서버로부터 데이터를 다운 -> 사용자에게 보여주기, 사용자 데이터를 웹 서버에 업로드하는 사용자 인터페이스 역할
+
+        웹사이트(Web Site): 웹 서버에 저장된 문서들의 집합
+
+      1.2 인터넷과 웹
+        인터넷(Internet): 웹 서버와 웹 클라이언트가 연결된 네트워크, 웹 개발 이전부터 존재, IP(Internet Protocol) 주소를 사용하여 연결
+        -> 인터넷과 웹은 같은 개념이 아니다. 인터넷은 웹을 포함하는 개념이다.
+
+        월드 와이드 웹(World Wide Web; www): 웹 서버와 웹 클라이언트가 연결된 인터넷에서 웹 서버에 저장된 문서들을 쉽게 찾을 수 있도록 하는 기술
+        웹 브라우저(Web Browser): 웹 서버에 저장된 문서를 보여주는 프로그램
+
+      1.3 웹 문서와 전자 문서
+        웹 문서(Web Document): 웹 서버에 저장된 문서
+        전자 문서(Electronic Document): 웹 문서를 포함한 모든 문서
+
+        웹 문서는 HTML(Hyper Text Markup Language)이라는 언어로 작성된다.
+        HTML은 웹 문서를 구조화하는 언어이다.
+
+        웹 문서는 웹 페이지(Web Page)라는 기본 단위들의 집합이다.
+        
+        웹 페이지간 연결은 하이퍼링크(Hyperlink)라는 기능을 사용한다.
+
+        읽는 순서의 차이: 웹 문서는 읽는 순서가 없다. 웹 페이지는 읽는 순서가 있다. 반면 전자문서는 처음부터 끝까지 순서대로 읽게된다.
+
+      1.4 웹 페이지의 주소, URL
+        웹 페이지의 주소: 웹 페이지를 식별하는 주소
+        URL(Uniform Resource Locator): 웹 페이지의 주소를 표현하는 방법
+
+        URL의 구성: 프로토콜://서버주소:포트번호/경로/파일이름
+
+        프로토콜: 웹 서버와 웹 클라이언트가 데이터를 주고받는 방법을 정의한 규칙 - http, https, ftp, telnet, file 등
+        서버주소: 웹 서버의 IP 주소 - www.naver.com, www.google.com 등
+        TCP / IP 포트번호: 웹 서버가 사용하는 포트 번호, 프로토콜마다 다름 - http:80, https:443, ftp:21, telnet:23, file:0 등
+        경로: 웹 서버의 파일이 저장된 폴더
+        파일이름: 웹 서버에 저장된 파일 이름
+
+        웹 페이지의 주소는 URL로 표현한다.
+        웹 페이지의 주소는 웹 서버의 IP 주소를 사용하지 않고 도메인 이름을 사용한다.
+        도메인 이름: 웹 서버의 IP 주소를 사람이 쉽게 기억할 수 있도록 문자로 표현한 것
+
+        도메인 이름은 루트 도메인, 2차 도메인, 3차 도메인으로 구성된다.
+        루트 도메인: .com, .net, .org, .kr, .jp 등
+        2차 도메인: 루트 도메인을 제외한 도메인 이름
+        3차 도메인: 2차 도메인을 제외한 도메인 이름
+
+        웹 페이지를 엑세스하기 위해 http나 https 프로토콜에 80 포트를 사용하고, 80은 생략 가능하다(Default)
+
+      1.5 웹 브라우저와 웹 서버 사이의 통신, HTTP
+        HTTP: 웹 브라우저와 웹 서버가 데이터를 주고받는 방법을 정의한 규칙(HyperText Transfer Protocol), 웹 브라우저의 요청 <-> 웹 서버의 응답
+
+        HTTP 세션: 웹 브라우저와 웹 서버가 데이터를 주고받는 과정 (1-5 과정)
+          1. 웹 브라우저가 웹 서버에 접속을 요청
+          2. 웹 서버가 웹 브라우저에 접속을 승인
+          3. 웹 브라우저가 웹 서버에 웹 페이지(index.html)를 요청 
+          4. HTML 페이지 읽기
+          5. 웹 서버가 웹 브라우저에 웹 페이지(index.html)를 응답
+          6. HTML 페이지 해독 및 출력
+        
+      1.6 기타 개념
+        Hypertext: 웹 페이지에 포함된 하이퍼링크를 통해 다른 웹 페이지로 이동할 수 있는 텍스트
+        웹의 성공 요소: 만들기 쉬운 html문서, 효율적인 http통신, 클라이언트와 서버의 작업 분담
+         
+-->
+
+<!--
+    2. 웹 페이지 구성
+      2.1 웹 페이지 구성 3요소
+        HTML: 웹 페이지의 구조를 정의하는 언어
+        CSS(Cascading Style Sheet): 웹 페이지의 스타일을 정의하는 언어
+        JavaScript: 웹 페이지의 동작을 정의하는 언어
+    
+-->
+
+<!--
+    3. HTML5 웹 프로그래밍 개발 과정
+      3.1 HTML5 웹 프로그래밍 개발 과정
+        1. HTML5 문서 작성
+        2. HTML5 문서 검증
+         - HTML5 태그 검사: https://html5.validator.nu/
+         - CSS3 스타일 시트 검사: http://www.css-validator.org/validation.html.ko
+         - 자바스크립트 코드 오류 검사: Eclipse, JSlint
+         - 디버깅: HTML5 문서의 오류를 찾아내고 수정하는 과정. Chrome 개발자 도구를 사용하여 디버깅
+        3. HTML5 문서 테스트
+        4. HTML5 문서 배포
+        5. HTML5 문서 유지보수
+
+      3.2 HTML5 문서 작성
+        HTML5 문서 작성 도구
+          1. 텍스트 편집기
+          2. HTML5 편집기
+          3. HTML5 편집기 플러그인
+          4. HTML5 편집기 웹 애플리케이션
+          5. HTML5 편집기 웹 서비스
+
+      3.3 HTML5 문서 검증
+        HTML5 문서 검증 도구
+          1. W3C Markup Validation Service
+          2. W3C Markup Validation Service 플러그인
+          3. W3C Markup Validation Service 웹 애플리케이션
+          4. W3C Markup Validation Service 웹 서비스
+
+      3.4 HTML5 문서 테스트
+        HTML5 문서 테스트 도구
+          1. W3C HTML5 Test
+          2. W3C HTML5 Test 플러그인
+          3. W3C HTML5 Test 웹 애플리케이션
+          4. W3C HTML5 Test 웹 서비스
+
+      3.5 HTML5 문서 배포
+        HTML5 문서 배포 도구
+          1. FTP
+          2. FTP 플러그인
+          3. FTP 웹 애플리케이션
+          4. FTP 웹 서비스
+
+      3.6 HTML5 문서 유지보수
+        HTML5 문서 유지보수 도구
+          1. 텍스트 편집기
+          2. HTML5 편집기
+    
+-->
